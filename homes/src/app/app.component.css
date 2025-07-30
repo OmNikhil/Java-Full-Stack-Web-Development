@@ -1,0 +1,79 @@
+
+.container{
+    padding:20px;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    
+}
+
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.counts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    color: white;
+}
+
+table,td,th{
+    color: white;
+    margin: auto;
+    width: 50%;
+    border: 1px solid black;
+
+}
+
+.rotate{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: 100px;
+    margin-top: 100px;
+}
+.box1{
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    margin: auto;
+    transition: all 0.1s linear;
+}
+.box2{
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    margin: auto;
+    transition: all 0.1s linear;
+    
+}
+
+.inputs{
+    grid: 1/-1;
+    
+}
+
+.r{
+    border-color: red;
+    border-radius: 10px;
+    background-color: blue;
+}
+.g{
+    border-color: green;
+    border-radius: 10px;
+    background-color: aqua;
+}

@@ -1,0 +1,74 @@
+<!-- Main container for the text editor and controls -->
+<div class="container">
+
+  <!-- Text area where user enters input -->
+  <!-- The text is two-way bound to 'text' variable using [(ngModel)] -->
+  <!-- It also updates character/word count on each input event -->
+  <textarea 
+    [ngStyle]="{'text-transform': (iscapitalize) ? 'capitalize' : ''}" 
+    cols="10" rows="5" 
+    [(ngModel)]="text" 
+    (input)="myfun()">
+  </textarea>
+
+  <!-- Button group for case transformations and other functions -->
+  <div class="btn">
+    <button (click)="convert('Cc')">Capitalize Case</button> <!-- Capitalizes first letter of each word -->
+    <button (click)="convert('c')">Lower Case</button>      <!-- Converts all to lowercase -->
+    <button (click)="convert('C')">Upper Case</button>      <!-- Converts all to uppercase -->
+    <button (click)="convert('')">Reverse Case</button>     <!-- (Unused case) Placeholder -->
+    <button (click)="myfun()">Add</button>                  <!-- Updates character and word count -->
+    <button (click)="my()">ADD</button>                     <!-- Triggers frequency analysis -->
+  </div>
+
+  <!-- Display of counts: characters, words -->
+  <div class="counts">
+    <p>Character Count: {{ num }}</p>          <!-- Total number of characters -->
+    <p>Word Count: {{ myfun() }}</p>           <!-- Word count returned by myfun() -->
+    <p>Line Count:</p>                         <!-- (Unimplemented) You can add logic to count '\n' -->
+  </div>
+</div>
+
+<!-- Table showing frequency count of each alphabet letter -->
+<table [ngClass]="'a'">
+  <thead>
+    <tr>
+      <th colspan="3">Letters Count</th>
+    </tr>
+    <tr>
+      <th>Letter</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Loop through 'plist' and display letter frequency -->
+    @for (item of plist; track $index) {
+      <tr>
+        <td>{{ item.letter }}</td>
+        <td>{{ item.count }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<!-- Section with rotating boxes controlled by range input -->
+<div class="rotate">
+  <!-- Rotating box 1: changes color based on even/odd range value -->
+  <div 
+    class="box1" 
+    [ngStyle]="{'rotate': rangea + 'deg'}" 
+    [ngClass]="(rangea % 2 == 0) ? 'r' : 'g'">
+  </div>
+
+  <!-- Rotating box 2: same as above -->
+  <div 
+    class="box2" 
+    [ngStyle]="{'rotate': rangea + 'deg'}" 
+    [ngClass]="(rangea % 2 == 0) ? 'r' : 'g'">
+  </div>
+
+  <!-- Range input slider that controls rotation value -->
+  <div class="inputs">
+    <input type="range" min="-360" max="360" [(ngModel)]="rangea">
+  </div>
+</div>

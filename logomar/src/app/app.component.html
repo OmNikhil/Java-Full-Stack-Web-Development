@@ -1,0 +1,22 @@
+<div style="padding: 20px; max-width: 600px; margin: auto;">
+
+  <h2>{{ title
+    }}</h2>
+
+  <textarea
+    [ngStyle]="{'text-transform': isCaptiallize ? 'capitalize' : 'none'}"
+    cols="30"
+    rows="5"
+    [(ngModel)]="text">
+  </textarea>
+
+  <div style="margin-top: 10px;">
+    <button (click)="myfun('l')">Lower</button>
+    <button (click)="myfun('u')">Upper</button>
+    <button (click)="myfun('c')">Capitalize</button>
+    <button (click)="myfun('r')">Reverse</button>
+  </div>
+
+  <p style="margin-top: 20px;"><strong>Output:</strong> {{ text }}</p>
+
+</div>
