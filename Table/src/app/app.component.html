@@ -1,0 +1,39 @@
+<div class="main-container">
+  <div class="header">
+    <h1>Welcome to My Application</h1>
+  </div>
+  
+  <div class="content">
+        <div class="input-section">
+          <input type="number" [(ngModel)]="start" >
+          <input type="number" [(ngModel)]="end">
+
+          <button class="btn" (click)="my()">submit</button>
+        </div>
+
+        <div class="table-section">
+          <table  width="75%" border="1p">
+            <thead>
+              <tr>
+                <th [attr.colspan]="center">Table</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item1 of [1,2,3,4,5,6,7,8,9,10]; track $index) {
+                <tr>
+                  @for (item2 of endlist; track $index) { 
+                          <td>{{item1*item2}}</td>
+                  }
+              </tr>
+              }
+              
+            </tbody>
+          </table>
+        </div>
+        
+  </div>
+  
+  <div class="footer">
+
+  </div>
+</div>
