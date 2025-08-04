@@ -1,0 +1,49 @@
+<div class="main-container">
+  <div class="container1">
+    <h1>User</h1>
+  </div>
+
+  <div class="container2">
+    <div class="inputs">
+      <div class="input1">
+        <input type="text" placeholder="enter user name" [(ngModel)]="temp1">
+      </div>
+      <div class="input1">
+        <input type="text" placeholder="enter password" [(ngModel)]="temp2">
+      </div>
+      <div class="button1">
+        <button (click)="sumbit()">Sumbit</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container3">
+    <table width="75%" border="1p intitail">
+      <thead>
+        <tr>
+          <th colspan="10">User Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>User Name</td>
+          <td>User Password</td>
+          <td colspan="10">Actions</td>
+        </tr>
+        @for (item of temp; track $index) {
+          <tr>
+            <td>{{item.t1}}</td>
+            <td>{{item.t2}}</td>
+          
+            <td><button (click)="Add($index)">Add</button></td>
+            <td><button (click)="Delete($index)">Delete</button></td>
+            <td><button (click)="Update($index)">Update</button></td>
+            <td><button (click)="DeleteAll()">Delete All</button></td>
+            
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
